@@ -1,0 +1,121 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000
+}
+
+.logo {
+    width: 100px;
+    position: relative
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    right: 20px;
+    top: 10px
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color .3s
+}
+
+nav a:hover {
+    color: #ffa500
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    padding: 20px
+}
+
+main {
+    flex: 3;
+    position: relative
+}
+
+section {
+    margin-bottom: 20px;
+    display: block
+}
+
+aside {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    max-width: 250px
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center
+}
+
+address a {
+    color: #ffa500;
+    text-decoration: none
+}
+
+.float-left {
+    float: left;
+    margin: 10px
+}
+
+.float-right {
+    float: right;
+    margin: 10px
+}
+
+.php-overview {
+    padding: 20px 0
+}
+
+.content-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.php-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px
+}
+
+.php-text {
+    flex: 1
+}
+
+ul {
+    list-style: disc inside;
+    margin: 10px 0;
+    padding: 0
+}
+
