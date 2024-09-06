@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="image/x-icon" href="favicon.ico" rel="icon">
+    <title>Тестовая страница</title>
+</head>
+<body>
+    <h1>Добро пожаловать на нашу страницу!</h1>
+    <a href="#item1">Перейти к первому разделу</a><br>
+    <a href="#item2">Перейти ко второму разделу</a><br>
+    <a href="#item3">Перейти к третьему разделу</a><br>
+    <a href="#item4">Перейти к четвертому разделу</a>
+
+    <h2 id="item1">Теги для вывода многострочного текста</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur sapiente deleniti molestias sequi autem perferendis libero! Iure autem dicta error expedita fugit enim maxime repellat accusamus quos vitae illum sunt eligendi alias, dolore, sit labore nostrum blanditiis est rem. Sunt aspernatur totam laudantium. Harum odio, mollitia quibusdam dicta neque pariatur iusto iste quo repudiandae praesentium aspernatur aut voluptatibus obcaecati sit, voluptatum commodi. Ut praesentium corporis veniam odio veritatis. Esse mollitia cupiditate maiores repellat, illo nisi architecto aut sapiente est voluptates, vero quia minus earum libero et debitis beatae impedit quasi cum error voluptatum. Cumque quia commodi asperiores quos! Distinctio, repellendus.</p>
+
+    <pre>
+        $(document).ready(function() { 
+            $('input[type="checkbox"]').on('change', function() {
+                var parentId = $(this).attr('id');
+                if ($(this).is(':checked')) {
+                    $('input[data-parent="' + parentId + '"]').each(function() {
+                        $(this).prop('disabled', false);
+                        $(this).closest('.access__item_side').slideDown();
+                    });
+                } else {
+                    $('input[data-parent="' + parentId + '"]').each(function() {
+                        $(this).prop('disabled', true);
+                        $(this).prop('checked', false);
+                        $(this).closest('.access__item_side').slideUp();
+                    });
+                }
+            });
+        });       
+    </pre>
+    <h2 id="item2">Форматирование текста</h3>
+    <b>Тег B (жирный текст)</b><br>
+    <strong>Тег strong (важный текст)</strong><br>
+    <i>Тег i (курсивный текст)</i><br>
+    <em>Тег em (акцентированный текст)</em><br>
+    <u>Тег u (Подчеркнутый текст с ошибкой)</u><br>
+    <sub>Тег sub (нижнестрочный текст)</sub><br>
+    <sup>Тег sup (верхнестрочный текст)</sup><br>
+    <cite>Тег cite (Ссылка на источник цитаты)</cite><br>
+    <blockquote>Тег blockquote (Цитата)</blockquote><br>
+    <abbr>Тег abbr (Аббревиатура)</abbr><br>
+
+    <h2 id="item3">Списки</h2>
+    <ol type="A">
+        <li>Пункт 1</li>
+        <li>Пункт 2</li>
+        <li>
+            <ul>
+                <li>Подпункт 1</li>
+                <li>Подпункт 2</li>
+            </ul>
+        </li>
+    </ol>
+    <dl>
+        <dt>Yii</dt><dd>Фреймворк PHP</dd>
+        <dt>Laravel</dt><dd>Фреймворк PHP</dd>
+        <dt>Django</dt><dd>Фреймворк Python</dd>
+        <dt>React</dt><dd>Фреймворк JS</dd>
+        <dt>Vue</dt><dd>Фреймворк JS</dd>
+        <dt>Angular</dt><dd>Фреймворк JS</dd>
+    </dl>
+
+    <h2 id="item4">Ссылки</h2>
+    <p>Перейти на сайт <a href="https://yandex.ru">Яндекс</a></p>
+    <a href="https://php.net"><img width="500" height="200" src="https://avatars.mds.yandex.net/i?id=eaf591db1619667c0ef00226b8010ed31ff66fad-5869775-images-thumbs&n=13" alt=":("></a>
+    <p>Кликните на различные области изображения, чтобы перейти на соответствующие ресурсы.</p>
+    <img src="https://gitlab.com/uploads/-/system/project/avatar/3634117/php_elephant_3.jpg" alt="Карта изображения" usemap="#image-map" width="600" height="400">
+    <map name="image-map" class="image-map-container">
+        <area shape="circle" coords="150,150,50" href="https://yandex.ru" alt="Круг">
+        <area shape="rect" coords="300,100,450,250" href="https://google.com" alt="Прямоугольник">
+        <area shape="poly" coords="500,50,550,100,500,150,450,100" href="https://youtube.com" alt="Многоугольник">
+    </map>
+
+    <h2 id="item5">Футер</h2>
+    <footer>
+        <p>Свяжитесь с нами по телефону: <a href="tel:+79776809027">+7 977 680 90 27</a></p>
+        <p>Напишите нам по электронной почте: <a href="mailto:my2712@mail.ru">Обратная связь</a></p>
+    </footer>
+</body>
+</html>
