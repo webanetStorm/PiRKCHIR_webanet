@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center
+}
+
+.nav {
+    position: relative
+}
+
+.menu-toggle {
+    display: none
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
+    margin: 10px
+}
+
+.menu-icon span {
+    height: 4px;
+    background-color: #333;
+    transition: transform .3s;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: visibility 0s, opacity .3s, transform .3s
+}
+
+.menu li {
+    margin: 10px 0
+}
+
+.menu a {
+    color: #333;
+    text-decoration: none
+}
+
+.menu-toggle:checked + .menu-icon span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px)
+}
+
+.menu-toggle:checked + .menu-icon span:nth-child(2) {
+    opacity: 0
+}
+
+.menu-toggle:checked + .menu-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px)
+}
+
+.menu-toggle:checked ~ .menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.main {
+    padding: 20px
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px
+}
