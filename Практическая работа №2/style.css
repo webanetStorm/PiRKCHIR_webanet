@@ -79,7 +79,7 @@ footer {
     text-align: center
 }
 
-address a {
+address > a {
     color: #ffa500;
     text-decoration: none
 }

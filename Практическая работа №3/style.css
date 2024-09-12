@@ -114,8 +114,12 @@ address a {
 }
 
 ul {
-    list-style: disc inside;
+    list-style: none;
     margin: 10px 0;
     padding: 0
+}
+
+h3 {
+    text-decoration: underline
 }
 
