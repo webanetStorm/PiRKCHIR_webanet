@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Кнопки */
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn1:hover {
+    background-color: #f39c12;
+    transform: scale(1.1);
+}
+
+.btn2:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: left 0.3s;
+}
+
+.btn2:hover::before {
+    left: 0;
+}
+
+.btn3:hover {
+    background-color: #2ecc71;
+    transform: rotate(10deg);
+}
+
+.btn4:hover {
+    background-color: #3498db;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.2);
+}
+
+/* Уведомления */
+.notification {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    background-color: #eee;
+    cursor: pointer;
+}
+
+.notification .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.notification:hover .dropdown {
+    display: block;
+}
+
+/* Карточки */
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #3498db;
+    transition: height 0.3s;
+}
+
+.card:hover::before {
+    height: 100%;
+}
+
+/* Видео */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-content {
+    position: relative;
+    padding: 10px;
+    background-color: #eee;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.video-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #2ecc71;
+    transition: height 0.3s;
+}
+
+.video-content:hover::before {
+    height: 100%;
+}
