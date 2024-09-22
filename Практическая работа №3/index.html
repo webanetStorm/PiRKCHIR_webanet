@@ -2,87 +2,88 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="x-ua-compatible">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Практическая работа №3</title>
-        <link type="image/x-icon" href="favicon.ico" rel="icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
             <div class="header-container">
-                <img src="logo.jpg" alt="PHP Logo" class="logo">
+                <img src="logo.jpg" alt="Logo" class="logo">
                 <nav class="navigation">
                     <ul>
-                        <li><a href="#php">О PHP</a></li>
-                        <li><a href="#frameworks">Фреймворки</a></li>
-                        <li><a href="#use-cases">Применение</a></li>
+                        <li><a href="#php">О нас</a></li>
+                        <li><a href="#frameworks">Услуги</a></li>
+                        <li><a href="#use-cases">Проекты</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-
         <div class="content-wrapper">
             <main>
-                <section class="php-overview" id="php">
-                    <h1>PHP: Серверный язык программирования</h1>
-                    <div class="content-container">
-                        <img src="php.jpg" alt="PHP Elephant" class="php-image">
-                        <div class="php-text">
-                            <p>PHP (Hypertext Preprocessor) — один из самых популярных языков программирования...</p>
-                            <ul>
-                                <li>Легкость в изучении и использовании даже для новичков.</li>
-                                <li>Быстрая интеграция с HTML и поддержка различных баз данных.</li>
-                                <li>Огромное сообщество и обширная документация.</li>
-                            </ul>
+                <section id="php">
+                    <h1>О нашей компании</h1>
+                    <img src="php.jpg" alt="PHP" class="php-image float-left">
+                    <p>Мы занимаемся разработкой и консалтингом в IT-индустрии уже более 10 лет. Наша команда — это специалисты с большим опытом в веб-разработке.</p>
+                    <h3>Наши особенности:</h3>
+                    <ul>
+                        <li>Опыт в разработке крупных веб-приложений.</li>
+                        <li>Широкий спектр предлагаемых услуг.</li>
+                        <li>Работа с новыми технологиями и фреймворками.</li>
+                    </ul>
+                </section>
+                <section id="frameworks">
+                    <h2>Услуги</h2>
+                    <div class="services-container">
+                        <div class="service-box float-left">
+                            <h3>Разработка</h3>
+                            <p>Создание веб-приложений и сайтов любого уровня сложности.</p>
+                        </div>
+                        <div class="service-box float-right">
+                            <h3>Консалтинг</h3>
+                            <p>Консультации по использованию современных технологий для вашего бизнеса.</p>
                         </div>
                     </div>
                 </section>
-                <section id="frameworks">
-                    <h2>Популярные фреймворки на PHP</h2>
-                    <p>Фреймворки на PHP упрощают разработку сложных веб-приложений, предоставляя готовую структуру и набор инструментов для создания надежного и масштабируемого кода.</p>
-
-                    <h3>Laravel</h3>
-                    <img src="laravel-logo.png" alt="Laravel Logo" class="float-right" width="200" height="100">
-                    <p>Laravel — один из самых популярных фреймворков PHP, известный своей элегантностью и удобством использования. Он предоставляет широкий набор инструментов, включая маршрутизацию, миграции баз данных, шаблонизатор Blade и поддержку API.</p>
-
-                    <h3>Symfony</h3>
-                    <img src="symfony-logo.png" alt="Symfony Logo" class="float-left" width="200" height="100">
-                    <p>Symfony — мощный фреймворк для разработки корпоративных приложений. Он известен своей модульной структурой и большим набором компонентов, которые могут использоваться отдельно или вместе для создания сложных решений.</p>
-
-                    <h3>CodeIgniter</h3>
-                    <img src="codeigniter-logo.png" alt="CodeIgniter Logo" class="float-right" width="200" height="100">
-                    <p>CodeIgniter — легкий и быстрый фреймворк, подходящий для создания небольших и средних проектов. Он прост в освоении и имеет минимальные требования к серверу.</p>
-                </section>
                 <section id="use-cases">
-                    <h2>Применение PHP в веб-разработке</h2>
-                    <p>PHP используется в различных аспектах веб-разработки и является основой многих популярных сайтов и приложений.</p>
-                    <ul>
-                        <li><strong>Создание динамических сайтов:</strong> PHP позволяет создавать страницы, которые изменяются в зависимости от действий пользователя.</li>
-                        <li><strong>Работа с базами данных:</strong> PHP поддерживает соединение с различными базами данных.</li>
-                        <li><strong>Разработка RESTful API:</strong> PHP часто используется для создания серверной части RESTful API.</li>
-                        <li><strong>Контент-менеджмент:</strong> Системы управления контентом (CMS) на базе PHP, такие как WordPress и Joomla.</li>
-                    </ul>
+                    <h2>Наши проекты</h2>
+                    <div class="projects-grid">
+                        <div class="card">
+                            <img src="https://avatars.mds.yandex.net/i?id=31f5baa24994365c4abfaf5d22659cba_l-12795182-images-thumbs&n=13" alt="Проект 1">
+                            <h3>Проект 1</h3>
+                            <p>Описание проекта 1.</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://avatars.mds.yandex.net/get-altay/10702157/2a0000018a284988574aa2582078334378e1/orig" alt="Проект 2">
+                            <h3>Проект 2</h3>
+                            <p>Описание проекта 2.</p>
+                        </div>
+                        <div class="card">
+                            <img src="https://avatars.mds.yandex.net/i?id=720cc07fda5f034b8168b15a6c1ef178_l-12514612-images-thumbs&n=13" alt="Проект 3">
+                            <h3>Проект 3</h3>
+                            <p>Описание проекта 3.</p>
+                        </div>
+                    </div>
                 </section>
             </main>
             <aside>
                 <h3>Полезные ссылки</h3>
                 <ul>
-                    <li><a href="https://www.php.net" target="_blank">Официальный сайт PHP</a></li>
+                    <li><a href="https://example.com" target="_blank">Наш сайт</a></li>
                     <li><a href="https://laravel.com" target="_blank">Laravel</a></li>
                     <li><a href="https://symfony.com" target="_blank">Symfony</a></li>
-                    <li><a href="https://codeigniter.com" target="_blank">CodeIgniter</a></li>
-                    <li><a href="https://www.stackoverflow.com" target="_blank">Stack Overflow</a></li>
                 </ul>
             </aside>
         </div>
-
         <footer>
-            <address>
-                Created by webanet<br>
-                Обратная связь: <a href="mailto:webanet@vk.com">webanet@vk.com</a>
-            </address>
+            <address>Created by Матвей Яскевич<br><a href="mailto:webanet@vk.com">webanet@vk.com</a></address>
+            <span class="absolute-elem"></span>
         </footer>
+        <div class="fixed-box">
+            <p>Этот блок закреплен</p>
+        </div>
     </body>
 </html>
