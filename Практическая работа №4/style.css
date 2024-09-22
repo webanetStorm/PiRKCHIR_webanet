@@ -15,8 +15,8 @@ form {
 
 fieldset {
     border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 15px
+    padding: 1rem;
+    margin-bottom: 1rem
 }
 
 legend {
@@ -31,6 +31,7 @@ label {
 }
 
 input[type='text'],
+input[type='number'],
 input[type='tel'],
 input[type='email'],
 input[type='password'],
@@ -43,6 +44,7 @@ select {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #f9fbff;
 }
 
 input:focus, textarea:focus, select:focus {
@@ -51,8 +53,8 @@ input:focus, textarea:focus, select:focus {
 }
 
 ::placeholder {
-    color: #888;
-    opacity: 1;
+    color: #adb8cf;
+    opacity: 1
 }
 
 button, input[type='submit'] {
