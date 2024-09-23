@@ -29,6 +29,10 @@ header {
     height: auto
 }
 
+.php-image {
+    width: 220px
+}
+
 .navigation {
     position: sticky;
     top: 0;
