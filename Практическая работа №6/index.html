@@ -7,42 +7,64 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Пример кнопок</h1>
-        <div class="buttons">
-            <button class="btn btn1">Кнопка 1</button>
-            <button class="btn btn2">Кнопка 2</button>
-            <button class="btn btn3">Кнопка 3</button>
-            <button class="btn btn4">Кнопка 4</button>
-        </div>
-        <h1>Элемент уведомления</h1>
-        <div class="notification">
-            <span>Уведомления</span>
-            <ul class="dropdown">
-                <li>Сообщение 1</li>
-                <li>Сообщение 2</li>
-                <li>Сообщение 3</li>
-            </ul>
-        </div>
-        <h1>Карточки</h1>
-        <div class="cards">
-            <div class="card">
-                <h2>Карточка 1</h2>
+        <header>
+            <nav class="nav">
+                <h1>Практическая работа №6</h1>
+            </nav>
+            <div class="dropdown">
+                <button class="dropbtn"><img src="uved.png" alt=":("></button>
+                <div class="drop-num"><span>5</span></div>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
             </div>
-            <div class="card">
-                <h2>Карточка 2</h2>
+        </header>
+        <main>
+            <h1>Пример кнопок</h1>
+            <div class="buttons">
+                <button class="btn btn1">Кнопка 1</button>
+                <button class="btn btn2">Кнопка 2</button>
+                <button class="btn btn3">Кнопка 3</button>
+                <button class="btn btn4">Кнопка 4</button>
             </div>
-            <div class="card">
-                <h2>Карточка 3</h2>
+            <div class="cards-container" style="margin-top: 20px">
+                <div class="card">
+                    <img src="https://avatars.mds.yandex.net/i?id=6a309e308e0bc342bdf34d3920878848_l-5288159-images-thumbs&n=13" alt="Image 1">
+                    <div class="card-info">
+                        <h3>PHP</h3>
+                        <p>Лучший язык программирования</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://avatars.mds.yandex.net/i?id=ca4f6dc2f83405d0d430df0780367565287950cd-9229208-images-thumbs&n=13" alt="Image 2">
+                    <div class="card-info">
+                        <h3>C++</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem minima minus nesciunt omnis voluptas! Pariatur!</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://avatars.mds.yandex.net/i?id=91767d391fe3f7516c0d930d63afe920_l-4525038-images-thumbs&n=13" alt="Image 3">
+                    <div class="card-info">
+                        <h3>JAVA</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos dolorem maxime similique! Culpa, exercitationem voluptate!</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <h1>Видео с подписью</h1>
-        <div class="video-container">
-            <div class="video-content">
-                <video width="320" height="240" controls>
-                    <source src="movie.mp4" type="video/mp4">
-                </video>
-                <p>Подпись к видео</p>
+            <div class="video-container" style="margin-top: 20px">
+                <video src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay muted loop></video>
+                <div class="caption">
+                    <h2>Заголовок</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error distinctio optio id quaerat soluta inventore.</p>
+                </div>
             </div>
-        </div>
+        </main>
+        <footer>
+            <address>
+                Created by webanet<br>
+                Обратная связь: <a href="mailto:webanet@vk.com">webanet@vk.com</a>
+            </address>
+        </footer>
     </body>
 </html>
