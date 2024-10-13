@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Практическая работа №10</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f9f9f9;
+                margin: 0;
+                padding: 0;
+            }
+            header {
+                background-color: #4CAF50;
+                padding: 20px;
+                text-align: center;
+                color: white;
+            }
+            main {
+                padding: 20px;
+                max-width: 800px;
+                margin: auto;
+            }
+            .post-card {
+                background-color: white;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 15px;
+                margin-bottom: 20px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .post-card h3 {
+                margin-top: 0;
+            }
+            #submitBtn {
+                background-color: grey;
+                color: white;
+                padding: 10px;
+                border: none;
+                cursor: not-allowed;
+            }
+            #submitBtn.active {
+                background-color: #4CAF50;
+                cursor: pointer;
+            }
+            #captcha-display {
+                font-weight: bold;
+                font-size: 20px;
+                margin-top: 10px;
+            }
+            .cart {
+                background-color: #f2f2f2;
+                padding: 15px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .cart button {
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Сайт с капчей, корзиной и карточками</h1>
+        </header>
+        <main>
+            <section class="captcha-section">
+                <h2>Проверка капчи</h2>
+                <p>Введите символы с картинки:</p>
+                <span id="captcha-display"></span>
+                <input type="text" id="captcha-input" placeholder="Введите капчу">
+                <button onclick="checkCaptcha()">Проверить</button>
+                <p id="captcha-result"></p>
+            </section>
+            <section class="cart">
+                <h2>Корзина</h2>
+                <p>Текущая сумма: <span id="accumulator-value">0</span></p>
+                <button onclick="acc.read()">Добавить число</button>
+            </section>
+            <section>
+                <h2>Посты</h2>
+                <div class="post-card">
+                    <h3>Пост 1</h3>
+                    <p id="post1"></p>
+                </div>
+                <div class="post-card">
+                    <h3>Пост 2</h3>
+                    <p id="post2"></p>
+                </div>
+            </section>
+            <button id="submitBtn" disabled>Отправить форму</button>
+        </main>
+        <script>
+            let attempt = 1;
+            let captchaAnswer = generateCaptcha();
+
+            function generateCaptcha() {
+                const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                let captcha = '';
+
+                for (let i = 0; i < 5; i++) {
+                    captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+                }
+
+                document.getElementById('captcha-display').textContent = captcha;
+
+                return captcha;
+            }
+
+            function checkCaptcha() {
+                const input = document.getElementById('captcha-input').value;
+                const result = document.getElementById('captcha-result');
+                const submitBtn = document.getElementById('submitBtn');
+
+                if (attempt === 1 && input === captchaAnswer) {
+                    result.textContent = "Капча пройдена!";
+                    submitBtn.disabled = false;
+                    submitBtn.classList.add("active");
+                } else if (attempt === 1) {
+                    attempt++;
+                    result.textContent = "Неверно! Теперь решите: " + generateMathCaptcha();
+                } else if (attempt === 2 && checkMathCaptcha(input)) {
+                    result.textContent = "Капча пройдена!";
+                    submitBtn.disabled = false;
+                    submitBtn.classList.add("active");
+                } else {
+                    result.textContent = "Ошибка! Попробуйте снова.";
+                }
+            }
+
+            function generateMathCaptcha() {
+                const N = Math.floor(Math.random() * 10) + 1;
+                const M = Math.floor(Math.random() * 10) + 1;
+
+                window.mathCaptchaAnswer = N + M;
+
+                return `${N} + ${M} = ?`;
+            }
+
+            function checkMathCaptcha(input) {
+                return +input === window.mathCaptchaAnswer;
+            }
+
+            function Accumulator(startingValue) {
+                this.value = startingValue;
+
+                this.read = function() {
+                    let newValue = +prompt("Введите число для добавления в корзину:");
+
+                    if (!isNaN(newValue)) {
+                        this.value += newValue;
+                        document.getElementById('accumulator-value').textContent = this.value;
+                    }
+                };
+            }
+
+            let acc = new Accumulator(0);
+
+            function truncate(str, maxlength) {
+                return (str.length > maxlength) ? str.slice(0, maxlength - 1) + "…" : str;
+            }
+
+            document.getElementById("post1").textContent = truncate("Это длинный текст, который необходимо обрезать для удобства отображения на сайте.", 50);
+            document.getElementById("post2").textContent = truncate("Ещё один текст для примера работы функции truncate.", 50);
+
+            function isEmpty(obj) {
+                return Object.keys(obj).length === 0;
+            }
+        </script>
+    </body>
+</html>
