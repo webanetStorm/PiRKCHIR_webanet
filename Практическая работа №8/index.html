@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,37 +8,148 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header>
-            <h1>Explore Programming Languages</h1>
-            <p>Learn and discover popular programming languages and technologies</p>
-        </header>
-        <main>
-            <div class="grid">
-                <div class="grid__item grid__item_a">
-                    <img src="images/html.png" alt="html">
-                </div>
-                <div class="grid__item grid__item_b">
-                    <img src="images/css.png" alt=css"">
-                </div>
-                <div class="grid__item grid__item_c">
-                    <img src="images/js.png" alt="js">
-                </div>
-                <div class="grid__item grid__item_d">
-                    <img src="images/nodejs.png" alt="nodejs">
-                </div>
-                <div class="grid__item grid__item_e">
-                    <img src="images/react.png" alt="react">
-                </div>
-                <div class="grid__item grid__item_f">
-                    <img src="images/vue.png" alt="vue">
-                </div>
-                <div class="grid__item grid__item_g">
-                    <img src="images/angular.png" alt="angular">
-                </div>
-                <div class="grid__item grid__item_h">
-                    <img src="images/mongo.png" alt="mongo">
-                </div>
+        <div class="container">
+            <div class="header">
+                <header>
+                    <h1>Языки программирования</h1>
+                    <p>Блог и айти-технологиях, обучении и современных решениях</p>
+                </header>
             </div>
-        </main>
+            <div class="menu">
+                <section class="sidebar">
+                    <h3 class="sidebar__title">Последние темы</h3>
+                    <div class="sidebar__content">
+                        <ul class="sidebar__list">
+                            <li class="sidebar__item">Lorem ipsum dolor sit amet.</li>
+                            <li class="sidebar__item">Lorem ipsum dolor sit.</li>
+                            <li class="sidebar__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam atque consequatur earum temporibus voluptas?</li>
+                            <li class="sidebar__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, harum.</li>
+                            <li class="sidebar__item">Lorem ipsum.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <div class="content">
+                <main>
+                    <div class="grid">
+                        <div class="grid__item grid__item_a">
+                            <img src="images/html.png" alt="html">
+                            <div class="grid__snackbar snackbar">
+                                <h4 class="snackbar__title">HTML</h4>
+                            </div>
+                        </div>
+                        <div class="grid__item grid__item_b">
+                            <img src="images/css.png" alt="css">
+                            <div class="grid__snackbar snackbar">
+                                <h4 class="snackbar__title">CSS</h4>
+                            </div>
+                        </div>
+                        <div class="grid__item grid__item_c">
+                            <img src="images/js.png" alt="js">
+                            <div class="grid__snackbar snackbar">
+                                <h4 class="snackbar__title">JavaScript</h4>
+                            </div>
+                        </div>
+                        <div class="grid__item grid__item_d">
+                            <img src="images/nodejs.png" alt="nodejs">
+                            <div class="grid__snackbar snackbar">
+                                <h4 class="snackbar__title">NodeJS</h4>
+                            </div>
+                        </div>
+                        <div class="grid__item grid__item_e">
+                            <img src="images/react.png" alt="react">
+                            <div class="grid__snackbar snackbar">
+                                <h4 class="snackbar__title">ReactJS</h4>
+                            </div>
+                        </div>
+                        <div class="grid__item grid__item_f">
+                            <img src="images/vue.png" alt="vue">
+                            <div class="grid__snackbar snackbar">
+                                <h4 class="snackbar__title">VueJS</h4>
+                            </div>
+                        </div>
+                        <div class="grid__item grid__item_g">
+                            <img src="images/angular.png" alt="angular">
+                            <div class="grid__snackbar snackbar">
+                                <h4 class="snackbar__title">Angular</h4>
+                            </div>
+                        </div>
+                        <div class="grid__item grid__item_h">
+                            <img src="images/mongo.png" alt="mongo">
+                            <div class="grid__snackbar snackbar">
+                                <h4 class="snackbar__title">MongoDB</h4>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div class="form-wrapper">
+                <h3 class="form__title">Контактная форма</h3>
+                <div class="form">
+                    <div class="form__item">
+                        <input type="text" name="name" placeholder="Имя">
+                    </div>
+                    <div class="form__item">
+                        <input type="text" name="surname" placeholder="Фамилия">
+                    </div>
+                    <div class="form__item">
+                        <input type="number" name="age" placeholder="Возраст">
+                    </div>
+                    <div class="form__item">
+                        <input type="text" name="job" placeholder="Место работы">
+                    </div>
+                </div>
+                <button class="form-btn">Отправить</button>
+            </div>
+            <div class="footer">
+                <footer class="links">
+                    <div class="links-inner">
+                        <div class="browse">
+                            <div class="browse-1">
+                                <ul>
+                                    <li class="text-links-head">О нас</li>
+                                    <li><a href="" class="text-links">Курсы</a></li>
+                                    <li><a href="" class="text-links">Видеоуроки</a></li>
+                                    <li><a href="" class="text-links">Переподготовка</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="help">
+                                <ul>
+                                    <li class="text-links-head">Помощь</li>
+                                    <li><a href="" class="text-links">Проблемы с сайтом</a></li>
+                                    <li><a href="" class="text-links">Проблемы с оплатой</a></li>
+                                    <li><a href="" class="text-links">Техническая поддержка</a></li>
+                                    <li><a href="" class="text-links">Обратная связь</a></li>
+                                </ul>
+                            </div>
+                            <div class="about-us">
+                                <ul>
+                                    <li class="text-links-head">Партнеры</li>
+                                    <li><a href="" class="text-links">Партнер 1</a></li>
+                                    <li><a href="" class="text-links">Партнер 2</a></li>
+                                    <li><a href="" class="text-links">Партнер 3</a></li>
+                                    <li><a href="" class="text-links">Партнер 4</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <footer class="footer">
+                    <div class="footer-inner">
+                        <div class="socials">
+                            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href=""><i class="fa-brands fa-twitter"></i></a>
+                            <a href=""><i class="fa-brands fa-instagram"></i></a>
+                            <a href=""><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                        <div class="footer-links">
+                            <a href="#" class="text-links">&copy; 2024, все права защищены</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
     </body>
 </html>
