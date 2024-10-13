@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Практическая работа №9</title>
+        <link href="https://5s.prov.site/admin/src/iconsV6/all.css" rel="stylesheet">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+            }
+            header {
+                background-color: #4CAF50;
+                padding: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: white;
+            }
+            header h1 {
+                margin: 0;
+                font-size: 24px;
+            }
+            header nav {
+                display: flex;
+                gap: 10px;
+            }
+            header button {
+                background-color: white;
+                color: #4CAF50;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            section.posts {
+                margin: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .post-card {
+                background-color: white;
+                border-radius: 8px;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                width: 300px;
+            }
+            .post-card h3 {
+                margin-top: 0;
+            }
+            .like-btn {
+                background-color: #ddd;
+                border-radius: 50%;
+                border: none;
+                cursor: pointer;
+                font-size: 24px;
+                padding: 10px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+            .like-btn i {
+                color: #888;
+                transition: color 0.3s ease;
+            }
+            .like-btn.liked {
+                background-color: #ffccd5;
+            }
+            .like-btn.liked i {
+                color: #ff4081;
+            }
+            #drawing-zone {
+                width: 100%;
+                max-width: 800px;
+                height: 400px;
+                margin: 20px auto;
+                border: 2px solid #ccc;
+                background-color: #fafafa;
+                position: relative;
+                overflow: hidden;
+            }
+            #toggleDrawing {
+                display: block;
+                margin: 10px auto;
+                background-color: #ff5722;
+                color: white;
+                padding: 10px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            footer {
+                text-align: center;
+                padding: 10px;
+                background-color: #333;
+                color: white;
+                margin-top: 30px;
+            }
+            .heart {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color: red;
+                transform: rotate(-45deg);
+            }
+            .heart:before,
+            .heart:after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: red;
+            }
+            .heart:before {
+                top: -10px;
+                left: 0;
+            }
+            .heart:after {
+                left: 10px;
+                top: 0;
+            }
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <h1>Практическая работа №9</h1>
+            <nav>
+                <button onclick="askForRegistration()">Регистрация</button>
+                <button onclick="askForLogin()">Вход в админцентр</button>
+            </nav>
+        </header>
+
+        <section class="posts">
+            <div class="post-card">
+                <h3>Пост 1</h3>
+                <p>Это первый пример поста, который можно лайкнуть.</p>
+                <button class="like-btn" onclick="toggleLike(this)"><i class="fa-solid fa-heart"></i></button>
+            </div>
+            <div class="post-card">
+                <h3>Пост 2</h3>
+                <p>Это второй пример поста с функцией лайка.</p>
+                <button class="like-btn" onclick="toggleLike(this)"><i class="fa-solid fa-heart"></i></button>
+            </div>
+            <div class="post-card">
+                <h3>Пост 3</h3>
+                <p>Третий пост с кнопкой лайка. Попробуйте нажать на неё.</p>
+                <button class="like-btn" onclick="toggleLike(this)"><i class="fa-solid fa-heart"></i></button>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="text-align:center;">Зона для рисования</h2>
+            <div id="drawing-zone"></div>
+            <button id="toggleDrawing">Рисовать сердечки</button>
+        </section>
+
+        <footer>
+            <p>&copy; Created by webanet</p>
+        </footer>
+
+        <script>
+            function askForRegistration() {
+                let registration = confirm('Желаете пройти регистрацию на сайте?');
+                if (registration) {
+                    alert('Круто!');
+                } else {
+                    alert('Попробуй ещё раз.');
+                }
+            }
+
+            function askForLogin() {
+                let login = prompt('Введите логин:');
+                if (login === 'Админ') {
+                    let password = prompt('Введите пароль:');
+                    if (password === 'Я главный') {
+                        alert('Здравствуйте!');
+                    } else if (password === null || password === '') {
+                        alert('Отменено');
+                    } else {
+                        alert('Неверный пароль');
+                    }
+                } else if (login === null || login === '') {
+                    alert('Отменено');
+                } else {
+                    alert('Я вас не знаю');
+                }
+            }
+
+            function toggleLike(button) {
+                button.classList.toggle('liked');
+            }
+
+            let drawing = false;
+            const drawingZone = document.getElementById('drawing-zone');
+
+            document.getElementById('toggleDrawing').addEventListener('click', () => {
+                drawing = !drawing;
+                if (!drawing) {
+                    alert('Рисование остановлено');
+                }
+            });
+
+            drawingZone.addEventListener('mousemove', (e) => {
+                if (drawing) {
+                    const rect = drawingZone.getBoundingClientRect();
+                    const mouseX = e.clientX - rect.left;
+                    const mouseY = e.clientY - rect.top;
+
+                    if (mouseX >= 0 && mouseY >= 0 && mouseX <= rect.width && mouseY <= rect.height) {
+                        let heart = document.createElement('div');
+                        heart.className = 'heart';
+                        heart.style.left = `${mouseX}px`;
+                        heart.style.top = `${mouseY}px`;
+                        drawingZone.appendChild(heart);
+
+                        setTimeout(() => {
+                            heart.remove();
+                        }, 1000);
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
