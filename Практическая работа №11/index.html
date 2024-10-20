@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Интернет-магазин</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f9f9f9;
+                margin: 0;
+                padding: 0;
+            }
+
+            header {
+                background-color: #4CAF50;
+                padding: 20px;
+                text-align: center;
+                color: white;
+            }
+
+            main {
+                padding: 20px;
+                max-width: 1000px;
+                margin: auto;
+            }
+
+            .cart-item {
+                background-color: white;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 15px;
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .cart-item h3 {
+                margin: 0;
+            }
+
+            .cart-item button {
+                background-color: #ff4081;
+                color: white;
+                border: none;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .cart-item input {
+                width: 40px;
+                text-align: center;
+            }
+
+            .control-buttons {
+                margin-bottom: 20px;
+            }
+
+            button {
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <header>
+            <h1>Интернет-магазин</h1>
+        </header>
+
+        <main>
+
+            <!-- Корзина -->
+            <section id="cart">
+                <h2>Корзина</h2>
+                <div class="control-buttons">
+                    <button onclick="changeItem()">Изменить элемент</button>
+                    <button onclick="clearCart()">Очистить корзину</button>
+                </div>
+                <div id="cart-items">
+                    <!-- Товары будут динамически добавляться сюда -->
+                </div>
+                <p>Общая стоимость: <span id="total-price">0</span> руб.</p>
+            </section>
+
+            <!-- Фильтрация товаров -->
+            <section>
+                <h2>Фильтрация товаров</h2>
+                <label for="min">Минимальная цена: </label>
+                <input type="number" id="min" value="0">
+                <label for="max">Максимальная цена: </label>
+                <input type="number" id="max" value="1000">
+                <button onclick="filterItems()">Применить фильтр</button>
+                <div id="filtered-items"></div>
+            </section>
+
+            <!-- Сортировка товаров -->
+            <section>
+                <h2>Сортировка товаров</h2>
+                <button onclick="sortItems('asc')">Сортировать по возрастанию</button>
+                <button onclick="sortItems('desc')">Сортировать по убыванию</button>
+                <div id="sorted-items"></div>
+            </section>
+
+        </main>
+
+        <script>
+            let cart = [
+                {name: "Товар 1", price: 500, quantity: 1},
+                {name: "Товар 2", price: 700, quantity: 1},
+                {name: "Товар 3", price: 300, quantity: 1}
+            ];
+
+            function displayCart() {
+                const cartItemsDiv = document.getElementById("cart-items");
+                cartItemsDiv.innerHTML = "";
+                let totalPrice = 0;
+                cart.forEach((item, index) => {
+                    totalPrice += item.price * item.quantity;
+                    cartItemsDiv.innerHTML += `
+                <div class="cart-item">
+                    <h3>${item.name}</h3>
+                    <input type="number" value="${item.quantity}" onchange="updateQuantity(${index}, this.value)">
+                    <span>${item.price * item.quantity} руб.</span>
+                    <button onclick="removeItem(${index})">Удалить</button>
+                </div>
+            `;
+                });
+                document.getElementById("total-price").textContent = totalPrice;
+            }
+
+            function changeItem() {
+                if (cart.length > 0) {
+                    const randomIndex = Math.floor(Math.random() * cart.length);
+                    cart[randomIndex].name = "Новый товар";
+                    cart[randomIndex].price = Math.floor(Math.random() * 1000) + 1;
+                    displayCart();
+                }
+            }
+
+            function clearCart() {
+                cart = [];
+                displayCart();
+            }
+
+            function removeItem(index) {
+                cart.splice(index, 1);
+                displayCart();
+            }
+
+            function updateQuantity(index, value) {
+                cart[index].quantity = parseInt(value);
+                displayCart();
+            }
+
+            function filterItems() {
+                const min = parseInt(document.getElementById("min").value);
+                const max = parseInt(document.getElementById("max").value);
+                const filtered = cart.filter(item => item.price >= min && item.price <= max);
+                displayFilteredItems(filtered);
+            }
+
+            function displayFilteredItems(items) {
+                const filteredItemsDiv = document.getElementById("filtered-items");
+                filteredItemsDiv.innerHTML = items.map(item => `<p>${item.name}: ${item.price} руб.</p>`).join("");
+            }
+
+            function sortItems(order) {
+                const sorted = [...cart].sort((a, b) => {
+                    return order === 'asc' ? a.price - b.price : b.price - a.price;
+                });
+                displaySortedItems(sorted);
+            }
+
+            function displaySortedItems(items) {
+                const sortedItemsDiv = document.getElementById("sorted-items");
+                sortedItemsDiv.innerHTML = items.map(item => `<p>${item.name}: ${item.price} руб.</p>`).join("");
+            }
+
+            // Инициализация корзины
+            displayCart();
+        </script>
+
+    </body>
+</html>
