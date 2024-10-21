@@ -112,14 +112,14 @@
 
         <script>
             let cart = [
-                {name: "Товар 1", price: 500, quantity: 1},
-                {name: "Товар 2", price: 700, quantity: 1},
-                {name: "Товар 3", price: 300, quantity: 1}
+                {name: 'Товар 1', price: 500, quantity: 1},
+                {name: 'Товар 2', price: 700, quantity: 1},
+                {name: 'Товар 3', price: 300, quantity: 1}
             ];
 
             function displayCart() {
-                const cartItemsDiv = document.getElementById("cart-items");
-                cartItemsDiv.innerHTML = "";
+                const cartItemsDiv = document.getElementById('cart-items');
+                cartItemsDiv.innerHTML = '';
                 let totalPrice = 0;
                 cart.forEach((item, index) => {
                     totalPrice += item.price * item.quantity;
@@ -132,13 +132,13 @@
                 </div>
             `;
                 });
-                document.getElementById("total-price").textContent = totalPrice;
+                document.getElementById('total-price').textContent = totalPrice;
             }
 
             function changeItem() {
                 if (cart.length > 0) {
                     const randomIndex = Math.floor(Math.random() * cart.length);
-                    cart[randomIndex].name = "Новый товар";
+                    cart[randomIndex].name = 'Новый товар';
                     cart[randomIndex].price = Math.floor(Math.random() * 1000) + 1;
                     displayCart();
                 }
@@ -160,30 +160,23 @@
             }
 
             function filterItems() {
-                const min = parseInt(document.getElementById("min").value);
-                const max = parseInt(document.getElementById("max").value);
-                const filtered = cart.filter(item => item.price >= min && item.price <= max);
-                displayFilteredItems(filtered);
+                displayFilteredItems(cart.filter(item => item.price >= parseInt(document.getElementById('min').value) && item.price <= parseInt(document.getElementById('max').value)));
             }
 
             function displayFilteredItems(items) {
-                const filteredItemsDiv = document.getElementById("filtered-items");
-                filteredItemsDiv.innerHTML = items.map(item => `<p>${item.name}: ${item.price} руб.</p>`).join("");
+                document.getElementById('filtered-items').innerHTML = items.map(item => `<p>${item.name}: ${item.price} руб.</p>`).join('');
             }
 
             function sortItems(order) {
-                const sorted = [...cart].sort((a, b) => {
+                displaySortedItems([...cart].sort((a, b) => {
                     return order === 'asc' ? a.price - b.price : b.price - a.price;
-                });
-                displaySortedItems(sorted);
+                }));
             }
 
             function displaySortedItems(items) {
-                const sortedItemsDiv = document.getElementById("sorted-items");
-                sortedItemsDiv.innerHTML = items.map(item => `<p>${item.name}: ${item.price} руб.</p>`).join("");
+                document.getElementById('sorted-items').innerHTML = items.map(item => `<p>${item.name}: ${item.price} руб.</p>`).join('');
             }
 
-            // Инициализация корзины
             displayCart();
         </script>
 
