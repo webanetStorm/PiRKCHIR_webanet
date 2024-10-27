@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Практическое задание №12</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f9f9f9;
+                margin: 0;
+                padding: 0;
+            }
+            header, main {
+                padding: 20px;
+                max-width: 800px;
+                margin: auto;
+            }
+            .notification-container {
+                background-color: #ffecb3;
+                border: 1px solid #ffb74d;
+                padding: 15px;
+                margin-bottom: 20px;
+                position: relative;
+            }
+            .notification-counter {
+                font-weight: bold;
+                color: #d84315;
+            }
+            .notification {
+                background-color: #ffeb3b;
+                border: 1px solid #fbc02d;
+                padding: 10px;
+                margin-top: 10px;
+            }
+            button {
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
+            .list-container {
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Практическое задание №12</h1>
+        </header>
+        <main>
+            <section class="notification-container">
+                <h2>Уведомления</h2>
+                <p>Новые уведомления: <span class="notification-counter" id="notificationCounter">0</span></p>
+                <button onclick="pauseNotifications()">Остановить уведомления на 10 секунд</button>
+                <div id="notificationList"></div>
+            </section>
+            <section class="list-container">
+                <h2>Создание списка</h2>
+                <button onclick="createList()">Создать новый список</button>
+                <ul id="userList"></ul>
+            </section>
+        </main>
+        <script>
+            let notificationCount = 0, notificationInterval;
+
+            function addNotification() {
+                notificationCount++;
+                document.getElementById('notificationCounter').textContent = notificationCount;
+
+                const notification = document.createElement('div');
+
+                notification.className = 'notification';
+                notification.textContent = `Новое уведомление ${notificationCount}`;
+                document.getElementById('notificationList').appendChild(notification);
+
+                showNotification({ content: `Новое уведомление ${notificationCount}` });
+            }
+
+            function debounce(func, delay) {
+                let timer;
+                return function() {
+                    if (timer)
+                        clearTimeout(timer);
+                    timer = setTimeout(() => func.apply(this, arguments), delay);
+                };
+            }
+
+            function pauseNotifications() {
+                clearInterval(notificationInterval);
+                setTimeout(() => {
+                    notificationInterval = setInterval(addNotification, 3000);
+                }, 10000);
+            }
+
+            notificationInterval = setInterval(addNotification, 3000);
+
+            function showNotification({ content }) {
+                const notification = document.createElement('div');
+
+                notification.className = 'notification';
+                notification.textContent = content;
+
+                document.body.append(notification);
+                setTimeout(() => notification.remove(), 1500);
+            }
+
+            function createList() {
+                const userList = document.getElementById('userList');
+                userList.innerHTML = '';
+
+                while (true) {
+                    let listItemContent = prompt('Введите содержимое пункта (оставьте пустым для завершения):');
+
+                    if (!listItemContent)
+                        break;
+
+                    const listItem = document.createElement('li');
+                    listItem.textContent = listItemContent;
+                    userList.appendChild(listItem);
+                }
+            }
+        </script>
+    </body>
+</html>
