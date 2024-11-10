@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Практическая работа №14</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f9f9f9;
+            }
+            h2 {
+                color: #4CAF50;
+            }
+            #contents {
+                padding: 20px;
+                border: 1px solid #ddd;
+                margin-bottom: 20px;
+            }
+            .gallery {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            .gallery img {
+                width: 60px;
+                cursor: pointer;
+                border: 1px solid #ddd;
+            }
+            #mainImage {
+                width: 300px;
+                height: 200px;
+                border: 1px solid #ddd;
+                margin-bottom: 20px;
+            }
+            .file-list {
+                user-select: none;
+                margin-bottom: 20px;
+            }
+            .file-list li {
+                padding: 5px;
+                border: 1px solid #ddd;
+                margin: 5px 0;
+                cursor: pointer;
+            }
+            .file-list .selected {
+                background-color: #b2ebf2;
+            }
+            .slider {
+                position: relative;
+                width: 200px;
+                height: 10px;
+                background-color: #ddd;
+                margin: 20px 0;
+            }
+            .thumb {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color: #4CAF50;
+                border-radius: 50%;
+                top: -5px;
+                cursor: pointer;
+            }
+            .cart {
+                border: 1px solid #ddd;
+                padding: 20px;
+                margin-top: 20px;
+            }
+            .item {
+                padding: 10px;
+                border: 1px solid #ddd;
+                cursor: grab;
+                margin: 5px 0;
+            }
+            .animated-box {
+                width: 50px;
+                height: 50px;
+                background-color: #4CAF50;
+                position: relative;
+                animation: bounce 2s infinite alternate;
+            }
+            @keyframes bounce {
+                from { top: 0; }
+                to { top: 50px; }
+            }
+            .animated-rotation {
+                width: 50px;
+                height: 50px;
+                background-color: #ff5722;
+                animation: rotate 3s infinite linear;
+            }
+            @keyframes rotate {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+            }
+        </style>
+    </head>
+    <body>
+
+        <h2>1. Подтверждение перехода по ссылкам</h2>
+        <div id="contents">
+            <p>Пример текста с <a href="https://example.com">ссылкой на внешний ресурс</a>.</p>
+        </div>
+
+        <h2>2. Галерея изображений</h2>
+        <img id="mainImage" src="https://via.placeholder.com/300x200?text=Main+Image" alt="Main Image">
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300x200?text=Image+1" onclick="changeImage(this)" alt="Image 1">
+            <img src="https://via.placeholder.com/300x200?text=Image+2" onclick="changeImage(this)" alt="Image 2">
+            <img src="https://via.placeholder.com/300x200?text=Image+3" onclick="changeImage(this)" alt="Image 3">
+        </div>
+
+        <h2>3. Список с выделением элементов</h2>
+        <ul class="file-list" id="fileList">
+            <li>Файл 1</li>
+            <li>Файл 2</li>
+            <li>Файл 3</li>
+        </ul>
+
+        <h2>4. Слайдер</h2>
+        <div class="slider" id="slider">
+            <div class="thumb" id="thumb"></div>
+        </div>
+
+        <h2>5. Перетаскивание товаров в корзину</h2>
+        <div class="item" draggable="true" data-price="50" ondragstart="drag(event)">Товар 1 — 50 руб.</div>
+        <div class="item" draggable="true" data-price="100" ondragstart="drag(event)">Товар 2 — 100 руб.</div>
+        <div class="cart" ondrop="drop(event)" ondragover="allowDrop(event)">
+            Корзина (Общая сумма: <span id="total">0</span> руб.)
+        </div>
+
+        <h2>6. Анимации</h2>
+        <div class="animated-box"></div>
+        <div class="animated-rotation" style="margin-top: 20px;"></div>
+
+        <script>
+            // 1. Подтверждение перехода по ссылкам с делегированием
+            document.getElementById('contents').addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                    const leave = confirm('Вы действительно хотите покинуть страницу?');
+                    if (!leave) {
+                        event.preventDefault();
+                    }
+                }
+            });
+
+            // 2. Галерея изображений
+            function changeImage(img) {
+                document.getElementById('mainImage').src = img.src;
+            }
+
+            // 3. Список с выделением элементов
+            const fileList = document.getElementById('fileList');
+            fileList.addEventListener('click', function(event) {
+                if (event.target.tagName === 'LI') {
+                    if (event.ctrlKey || event.metaKey) {
+                        event.target.classList.toggle('selected');
+                    } else {
+                        Array.from(fileList.children).forEach(li => li.classList.remove('selected'));
+                        event.target.classList.add('selected');
+                    }
+                }
+            });
+
+            // 4. Слайдер
+            const thumb = document.getElementById('thumb');
+            const slider = document.getElementById('slider');
+
+            thumb.onmousedown = function(event) {
+                event.preventDefault();
+                const shiftX = event.clientX - thumb.getBoundingClientRect().left;
+
+                function moveAt(pageX) {
+                    let newLeft = pageX - shiftX - slider.getBoundingClientRect().left;
+                    if (newLeft < 0) newLeft = 0;
+                    const rightEdge = slider.offsetWidth - thumb.offsetWidth;
+                    if (newLeft > rightEdge) newLeft = rightEdge;
+                    thumb.style.left = newLeft + 'px';
+                }
+
+                function onMouseMove(event) {
+                    moveAt(event.pageX);
+                }
+
+                document.addEventListener('mousemove', onMouseMove);
+                document.onmouseup = function() {
+                    document.removeEventListener('mousemove', onMouseMove);
+                    document.onmouseup = null;
+                };
+            };
+
+            thumb.ondragstart = function() {
+                return false;
+            };
+
+            // 5. Перетаскивание товаров в корзину
+            function allowDrop(event) {
+                event.preventDefault();
+            }
+
+            function drag(event) {
+                event.dataTransfer.setData("text", event.target.dataset.price);
+            }
+
+            function drop(event) {
+                event.preventDefault();
+                const price = parseInt(event.dataTransfer.getData("text"), 10);
+                const totalElem = document.getElementById("total");
+                const currentTotal = parseInt(totalElem.textContent, 10);
+                totalElem.textContent = currentTotal + price;
+            }
+        </script>
+
+    </body>
+</html>
