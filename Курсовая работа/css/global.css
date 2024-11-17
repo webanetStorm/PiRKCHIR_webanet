@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0
+}
+
+body {
+    font-family: Lato, sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    scrollbar-color: rgb(176 179 195 / 60%) transparent;
+    scrollbar-gutter: stable;
+    background-color: #f4f4f8
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.block {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid rgb(232 232 239 / 100%);
+    border-radius: 12px;
+    box-shadow: rgb(41 41 64 / 7%) 0 1px 2px
+}
+
+.block_header {
+    border-radius: 0 0 16px 16px;
+    box-shadow: rgb(41 41 64 / 8%) 0 3px 6px -1px
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.menu__list {
+    display: flex;
+    gap: 20px
+}
+
+.menu__link {
+    display: flex;
+    align-items: center;
+    min-width: max-content;
+    height: 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #101025;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px
+}
+
+.menu__about {
+    background-color: #e8e8ef;
+    font-weight: 600;
+    padding: 0 12px
+}
+
+.user__background {
+    position: relative;
+    height: 110px;
+    background: url(../images/bg.png) center center / cover rgb(255, 255, 255)
+}
+
+.user__img {
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    width: 112px;
+    height: 112px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+}
+
+.user__name {
+    margin: 15px 0 15px 143px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #101025
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0
+}
+
+
+
+
+
+.table-d__item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 15px;
+    font-size: 15px
+}
+
+.table-d__value {
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
