@@ -1,0 +1,122 @@
+.block_timer {
+    padding: 20px;
+    margin: 20px auto;
+    border: 1px solid #e8e8ef;
+    border-radius: 8px;
+    background-color: #f4f4f8;
+    max-width: 600px;
+    text-align: center
+}
+
+.block__title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px
+}
+
+.block__description {
+    margin-bottom: 15px;
+    font-size: 16px
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px
+}
+
+.timer__part {
+    font-size: 20px;
+    color: #5c7cfa
+}
+
+.timer__subject {
+    font-style: italic
+}
+
+.block_game {
+    padding: 20px;
+    margin: 20px auto;
+    border: 1px solid #e8e8ef;
+    border-radius: 8px;
+    background-color: #f4f4f8;
+    max-width: 600px;
+    text-align: center
+}
+
+.block__title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px
+}
+
+.block__description {
+    margin-bottom: 15px;
+    font-size: 16px
+}
+
+.game {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #eef2ff;
+    border: 2px solid #5c7cfa;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 10px
+}
+
+.game__field {
+    position: relative;
+    width: 100%;
+    height: 100%
+}
+
+.game__score {
+    margin-bottom: 10px;
+    font-size: 16px
+}
+
+.game__start-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #5c7cfa;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .2s ease
+}
+
+.game__start-button:hover {
+    background-color: #4a6fda
+}
+
+.game__block {
+    position: absolute;
+    padding: 10px;
+    background-color: #ff6b6b;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform .1s ease
+}
+
+.game__block:hover {
+    transform: scale(1.2)
+}
+
+.game__block--exam {
+    background-color: #5c7cfa
+}
+
+.game__block--credit {
+    background-color: #69db7c
+}
+
+
