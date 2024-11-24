@@ -1,3 +1,7 @@
+.block {
+    overflow: visible
+}
+
 .grade__header {
     margin-bottom: 10px
 }
@@ -114,4 +118,118 @@
 
 .subject__teacher {
     font-style: italic
+}
+
+.select {
+    position: relative;
+    width: 100%;
+    margin: 0 auto
+}
+
+.select__header {
+    display: flex;
+    cursor: pointer;
+    height: 40px;
+    border: 1px solid rgb(214 214 223);
+    border-radius: 8px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.select__header_active {
+    box-shadow: 0 3px 3px rgb(52 62 86 / 20%)
+}
+
+.select__title {
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 16px
+}
+
+.select__icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    right: 0;
+    margin-left: auto
+}
+
+.select__icon:before, .select__icon:after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 1px;
+    border-radius: 1px;
+    background-color: var(--csw1);
+    transition: .15s
+}
+
+.select__icon:before {
+    transform: rotate(45deg);
+    left: 17px
+}
+
+.select__icon:after {
+    transform: rotate(-45deg);
+    left: 22px
+}
+
+.select__icon_active:before {
+    transform: rotate(-45deg)
+}
+
+.select__icon_active:after {
+    transform: rotate(45deg)
+}
+
+.select__body {
+    position: absolute;
+    display: none;
+    overflow-y: auto;
+    max-height: 350px;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 1px solid rgb(52 62 86 / 7%);
+    border-radius: 8px;
+    background-color: var(--cs2);
+    box-shadow: 0 3px 3px rgb(52 62 86 / 20%);
+    z-index: 3
+}
+
+.select__item {
+    position: relative;
+    cursor: pointer;
+    line-height: 18px;
+    margin-bottom: 4px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: .1s
+}
+
+.select__item:last-child {
+    margin-bottom: 0
+}
+
+.select__item:hover {
+    background-color: rgb(244 244 248)
+}
+
+.select__item_active {
+    background-color: rgb(76 110 245);
+    color: var(--cs2)
+}
+
+.select__item_active:hover {
+    background-color: rgb(76 110 245)
 }

@@ -1,10 +1,27 @@
 const config = {
     user: {
-        name: 'Матвей',
+        name: 'Блантер Матвей Дмитриевич',
         avatar: 'МБ',
+        login: 'blanter.m.d@edu.mirea.ru',
+        gender: 'муж',
+        birthdate: '27.12.2004',
+        age: 19,
         group: 'ИКБО-21-23',
+        personalNumber: '45А01209',
         course: 2,
-        department: 'Институт информационных технологий',
+        status: 'активный',
+    },
+    education: {
+        admissionYear: { value: 2023, label: 'Год приема' },
+        formingUnit: { value: 'Институт информационных технологий', label: 'Формирующее подразделение' },
+        graduatingDepartment: { value: 'Кафедра игровой индустрии', label: 'Выпускающее подразделение' },
+        programType: { value: 'Бакалавриат', label: 'Вид образовательной программы' },
+        specialty: { value: 'Программная инженерия (Разработка и дизайн компьютерных игр и мультимедийных приложений)', label: 'Направление подготовки (специальность)' },
+        fundingType: { value: 'Сверхплановое место', label: 'Вид возмещения затрат' },
+        qualification: { value: 'Бакалавр', label: 'Присваиваемая квалификация' },
+        standardPeriod: { value: '4 года', label: 'Нормативный срок освоения' },
+        studyForm: { value: 'очная', label: 'Форма освоения' },
+        targetAdmission: { value: 'нет', label: 'Целевой прием' },
     },
     semesters: {
         1: [

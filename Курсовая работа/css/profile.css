@@ -1,0 +1,58 @@
+.user__background {
+    position: relative;
+    height: 110px;
+    background: url(../images/bg.png) center center / cover #fff
+}
+
+.user__img {
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    width: 112px;
+    height: 112px;
+    border: 8px solid var(--cs2);
+    border-radius: 50%;
+}
+
+.user__name {
+    margin: 15px 0 15px 143px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600
+}
+
+.education {
+    padding: 20px
+}
+
+.education__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.education__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0
+}
+
+.education__label {
+    font-size: 15px;
+    color: #7b819b;
+    flex: 1
+}
+
+.education__value {
+    font-size: 15px;
+    font-weight: 700;
+    text-align: right;
+    flex: 2
+}
+
+.education__divider {
+    height: 1px;
+    background-color: #e8e8ef;
+    margin: 5px 0
+}
