@@ -1,0 +1,70 @@
+.retake-form__group {
+    margin-bottom: 20px
+}
+
+.retake-form__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #343e56
+}
+
+.retake-form__input, .retake-form__textarea, select.retake-form__input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #343e56;
+    background-color: #f9f9fc;
+    border: 1px solid #e8e8ef;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color .2s ease
+}
+
+.retake-form__input:focus, .retake-form__textarea:focus, select.retake-form__input:focus {
+    border-color: #5c7cfa
+}
+
+.retake-form__textarea {
+    resize: none
+}
+
+.retake-form__group_checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.retake-form__checkbox {
+    width: 16px;
+    height: 16px;
+    accent-color: #5c7cfa
+}
+
+.retake-form__checkbox-label {
+    font-size: 14px;
+    color: #343e56;
+    cursor: pointer
+}
+
+.retake-form__group_submit {
+    margin-top: 20px
+}
+
+.retake-form__submit {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5c7cfa;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .2s ease
+}
+
+.retake-form__submit:hover {
+    background-color: #4a6fda
+}

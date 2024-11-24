@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Запись на пересдачу</title>
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/retake.css">
+        <script src="js/config.js"></script>
+        <script src="js/retake.js"></script>
+    </head>
+    <body>
+        <div class="content">
+            <div class="content__main">
+                <header class="content__header">
+                    <div class="content__block block block_header header">
+                        <div class="header__top top">
+                            <h2 class="top__site-name">Зачетная книжка</h2>
+                            <div class="top__user">
+                                <span class="top__avatar">МБ</span>
+                                <span class="top__user-name">Матвей</span>
+                            </div>
+                        </div>
+                        <div class="header__menu menu">
+                            <ul class="menu__list">
+                                <li class="menu__item"><a class="menu__link" href="index.html">Главная</a></li>
+                                <li class="menu__item"><a class="menu__link" href="schedule.html">Расписание сессии</a></li>
+                                <li class="menu__item"><a class="menu__link" href="subjects.html">Зачётная книжка</a></li>
+                                <li class="menu__item"><a class="menu__link menu__link_active" href="retake.html">Пересдача</a></li>
+                            </ul>
+                            <ul class="menu__list">
+                                <li class="menu__item"><a class="menu__link" href="profile.html">Обо мне</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </header>
+                <main class="main">
+                    <div class="main__block block">
+                        <div class="block__header">
+                            <h6 class="block__title">Форма записи на пересдачу</h6>
+                        </div>
+                        <div class="block__body">
+                            <form class="retake-form">
+                                <div class="retake-form__group">
+                                    <label for="subject-select" class="retake-form__label">Выберите предмет</label>
+                                    <select id="subject-select" class="retake-form__input" required>
+                                        <option value="" disabled selected>Выберите предмет</option>
+                                    </select>
+                                </div>
+                                <div class="retake-form__group">
+                                    <label for="retake-date" class="retake-form__label">Дата пересдачи</label>
+                                    <input type="date" id="retake-date" class="retake-form__input" required>
+                                </div>
+                                <div class="retake-form__group">
+                                    <label for="comments" class="retake-form__label">Комментарий</label>
+                                    <textarea id="comments" class="retake-form__textarea" rows="4" placeholder="Введите дополнительную информацию..."></textarea>
+                                </div>
+                                <div class="retake-form__group retake-form__group_checkbox">
+                                    <input type="checkbox" id="retake-confirmation" class="retake-form__checkbox" required>
+                                    <label for="retake-confirmation" class="retake-form__checkbox-label">Подтверждаю, что я получил допуск</label>
+                                </div>
+                                <div class="retake-form__group retake-form__group_submit">
+                                    <button type="submit" class="retake-form__submit">Записаться</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <footer class="content__footer footer">
+                <span class="footer__copyright">Created by webanet</span>
+            </footer>
+        </div>
+    </body>
+</html>
