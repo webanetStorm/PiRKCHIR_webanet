@@ -148,3 +148,130 @@ body {
 .block__body {
     padding: 10px 20px 20px 20px
 }
+
+
+
+
+/* Общий стиль для хедера */
+.header {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e8e8ef;
+}
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e8e8ef;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.menu__list {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.menu__item {
+    list-style: none;
+}
+
+.menu__link {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #343e56;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.menu__link:hover {
+    background-color: #f4f4f8;
+}
+
+.menu__link_active {
+    background-color: #e8e8ef;
+    font-weight: bold;
+}
+
+/* Пользовательские данные в хедере */
+.top__user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top__avatar {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: rgb(253 126 20 / 80%);
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.top__user-name {
+    font-weight: bold;
+}
+
+
+
+@media (max-width: 768px) {
+    .header__top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px
+    }
+
+    .header__menu {
+        flex-direction: column;
+        gap: 10px
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px
+    }
+
+    .menu__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px
+    }
+
+    .menu__item {
+        width: 100%;
+        text-align: center
+    }
+
+    .menu__link {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 8px
+    }
+}

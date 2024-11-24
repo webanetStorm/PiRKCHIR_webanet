@@ -106,3 +106,50 @@
     background-color: #5c7cfa
 }
 
+
+
+@media (max-width: 768px) {
+    .calendar__header {
+        text-align: center;
+        margin-bottom: 20px
+    }
+
+    .calendar__title {
+        font-size: 16px
+    }
+
+    .calendar__body {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px
+    }
+
+    .calendar__day {
+        min-height: 80px;
+        padding: 8px
+    }
+
+    .calendar__day-date {
+        font-size: 12px;
+        margin-bottom: 5px
+    }
+
+    .calendar__event {
+        font-size: 10px;
+        padding: 2px 4px
+    }
+
+    .calendar__legend-list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px
+    }
+
+    .calendar__legend-title {
+        font-size: 14px
+    }
+
+    .calendar__legend-item {
+        font-size: 12px
+    }
+}
+
