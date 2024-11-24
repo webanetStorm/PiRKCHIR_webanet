@@ -1,0 +1,108 @@
+.calendar {
+    padding: 20px
+}
+
+.calendar__header {
+    margin-bottom: 20px;
+    text-align: center
+}
+
+.calendar__title {
+    font-size: 18px;
+    font-weight: bold
+}
+
+.calendar__body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px
+}
+
+.calendar__day {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9fc;
+    border: 1px solid #e8e8ef;
+    border-radius: 12px;
+    text-align: center;
+    min-height: 100px
+}
+
+.calendar__day-date {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px
+}
+
+.calendar__event {
+    font-size: 12px;
+    font-weight: 700;
+    margin: 2px 0;
+    padding: 2px 5px;
+    border-radius: 8px;
+    color: var(--cs2);
+    display: inline-block;
+    text-align: center
+}
+
+.calendar__event_zachet {
+    background-color: #69db7c
+}
+
+.calendar__event_exam {
+    background-color: #ffa94d
+}
+
+.calendar__event_coursework {
+    background-color: #5c7cfa
+}
+
+.calendar__legend {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e8e8ef
+}
+
+.calendar__legend-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px
+}
+
+.calendar__legend-list {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    list-style: none
+}
+
+.calendar__legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #7b819b
+}
+
+.calendar__legend-circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10px
+}
+
+.calendar__legend-circle_zachet {
+    background-color: #69db7c
+}
+
+.calendar__legend-circle_exam {
+    background-color: #ffa94d
+}
+
+.calendar__legend-circle_coursework {
+    background-color: #5c7cfa
+}
+

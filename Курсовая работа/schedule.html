@@ -3,55 +3,64 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Расписание сессии | Электронная зачетная книжка</title>
+        <title>Расписание сессии</title>
         <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/schedule.css">
+        <script src="js/config.js"></script>
+        <script src="js/schedule.js"></script>
     </head>
     <body>
         <div class="content">
-            <header class="content__header">
-                <div class="content__block block block_header menu">
-                    <ul class="menu__list">
-                        <li class="menu__item"><a class="menu__link" href="index.html">Главная</a></li>
-                        <li class="menu__item"><a class="menu__link menu__about" href="schedule.html">Расписание сессии</a></li>
-                        <li class="menu__item"><a class="menu__link" href="subjects.html">Зачётная книжка</a></li>
-                    </ul>
-                    <div class="menu__profile">
-                        <a href="profile.html" class="menu__link">Обо мне</a>
+            <div class="content__main">
+                <header class="content__header">
+                    <div class="content__block block block_header header">
+                        <div class="header__top top">
+                            <h2 class="top__site-name">Зачетная книжка</h2>
+                            <div class="top__user">
+                                <span class="top__avatar">МБ</span>
+                                <span class="top__user-name">Матвей</span>
+                            </div>
+                        </div>
+                        <div class="header__menu menu">
+                            <ul class="menu__list">
+                                <li class="menu__item"><a class="menu__link" href="index.html">Главная</a></li>
+                                <li class="menu__item"><a class="menu__link menu__link_active" href="schedule.html">Расписание сессии</a></li>
+                                <li class="menu__item"><a class="menu__link" href="subjects.html">Зачётная книжка</a></li>
+                            </ul>
+                            <ul class="menu__list">
+                                <li class="menu__item"><a class="menu__link" href="profile.html">Обо мне</a></li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </header>
-            <main class="content__main">
-                <div class="content__block block">
-                    <div class="block__header">
-                        <h6 class="block__title">Расписание сессии</h6>
+                </header>
+                <main class="content__main">
+                    <div class="content__block block calendar">
+                        <div class="calendar__header">
+                            <h3 class="calendar__title">3 семестр (2024/2025)</h3>
+                        </div>
+                        <div class="calendar__body"></div>
+                        <div class="calendar__legend">
+                            <h4 class="calendar__legend-title">Условные обозначения</h4>
+                            <ul class="calendar__legend-list">
+                                <li class="calendar__legend-item">
+                                    <span class="calendar__legend-circle calendar__legend-circle_zachet"></span>
+                                    Зачет
+                                </li>
+                                <li class="calendar__legend-item">
+                                    <span class="calendar__legend-circle calendar__legend-circle_exam"></span>
+                                    Экзамен
+                                </li>
+                                <li class="calendar__legend-item">
+                                    <span class="calendar__legend-circle calendar__legend-circle_coursework"></span>
+                                    Курсовая работа
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="block__body">
-                        <ul class="block__table-d table-d">
-                            <li>
-                                <div class="table-d__item">
-                                    <div class="table-d__param">Математика</div>
-                                    <div class="table-d__value">12 декабря, 10:00</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="table-d__item">
-                                    <div class="table-d__param">Физика</div>
-                                    <div class="table-d__value">14 декабря, 13:00</div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="table-d__item">
-                                    <div class="table-d__param">Программирование</div>
-                                    <div class="table-d__value">16 декабря, 15:00</div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </main>
+                </main>
+            </div>
             <footer class="content__footer footer">
                 <span class="footer__copyright">Created by webanet</span>
-                <span class="footer__vk">@webanet</span>
             </footer>
         </div>
     </body>
