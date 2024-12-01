@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const calendarBody = document.querySelector('.calendar__body');
-
-    // Генерация дней календаря
     const generateDays = (startDate, endDate) => {
         const days = [];
         let currentDate = new Date(startDate);
@@ -11,28 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         return days;
     };
-
     const days = generateDays(new Date('2024-12-24'), new Date('2025-01-31'));
-
-    // Заполнение календаря
     days.forEach((day) => {
         const dayElement = document.createElement('div');
         dayElement.classList.add('calendar__day');
-
         const dateElement = document.createElement('div');
         dateElement.classList.add('calendar__day-date');
         dateElement.textContent = day.toLocaleDateString('ru-RU', {
             day: '2-digit',
             month: 'short',
         });
-
         dayElement.appendChild(dateElement);
-
-        // Проверяем, есть ли события на этот день
         const events = config.session.subjects.filter(
             (subject) => new Date(subject.date).toDateString() === day.toDateString()
         );
-
         events.forEach((event) => {
             const eventElement = document.createElement('div');
             eventElement.classList.add(
@@ -46,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
             eventElement.textContent = `${event.name}`;
             dayElement.appendChild(eventElement);
         });
-
         calendarBody.appendChild(dayElement);
     });
 });

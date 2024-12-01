@@ -11,7 +11,7 @@
     width: 112px;
     height: 112px;
     border: 8px solid var(--cs2);
-    border-radius: 50%;
+    border-radius: 50%
 }
 
 .user__name {

@@ -152,11 +152,10 @@ body {
 
 
 
-/* Общий стиль для хедера */
 .header {
     padding: 10px 20px;
     background-color: #ffffff;
-    border-bottom: 1px solid #e8e8ef;
+    border-bottom: 1px solid #e8e8ef
 }
 
 .header__top {
@@ -164,31 +163,31 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 10px;
-    border-bottom: 1px solid #e8e8ef;
+    border-bottom: 1px solid #e8e8ef
 }
 
 .header__menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 10px
 }
 
 .menu {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 20px;
+    gap: 20px
 }
 
 .menu__list {
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 15px
 }
 
 .menu__item {
-    list-style: none;
+    list-style: none
 }
 
 .menu__link {
@@ -199,23 +198,22 @@ body {
     font-size: 14px;
     font-weight: 500;
     border-radius: 8px;
-    transition: background-color 0.2s ease;
+    transition: background-color .2s ease
 }
 
 .menu__link:hover {
-    background-color: #f4f4f8;
+    background-color: #f4f4f8
 }
 
 .menu__link_active {
     background-color: #e8e8ef;
-    font-weight: bold;
+    font-weight: bold
 }
 
-/* Пользовательские данные в хедере */
 .top__user {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 10px
 }
 
 .top__avatar {
@@ -228,11 +226,11 @@ body {
     text-align: center;
     font-size: 13px;
     font-weight: 700;
-    color: #fff;
+    color: #fff
 }
 
 .top__user-name {
-    font-weight: bold;
+    font-weight: bold
 }
 
 
